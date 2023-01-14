@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <style>
+      header {
+        text-align: center;
+      }
+
+      #container{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .gallery{
+        float: left;
+        width: 150px;
+        padding: 20px;
+        margin: 20px;
+        border: 1px solid darkcyan;
+      }
+
+      .gallery img{
+        width: 150px;
+        height: 150px;
+      }
+
+      .gallery:hover{
+        cursor: help;
+        border-radius: 25px;
+        box-shadow: 10px -10px rgb(217, 192, 255);
+        border: 1px solid rgb(70, 1, 149);
+      }
+
+      .description{
+        padding: 10px;
+        text-align: center;
+      }
+
+      a:visited{
+        color: brown;
+      }
+
+      a:hover{
+        color: powderblue;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <header><h1>Image Gallery Demo</h1></Image></header>
+    <div id="container">
+      <div class="gallery">
+        <a href="images/football.png" target="_blank">
+          <img src="images/football.png" alt="Football" />
+          <div class="description">Football</div>
+        </a>
+      </div>
+      <div class="gallery">
+        <a href="images/shoes.png" target="_blank">
+          <img src="images/shoes.png" alt="Football" />
+          <div class="description">Shoes</div>
+        </a>
+      </div>
+      <div class="gallery">
+        <a href="images/cap.png" target="_blank">
+          <img src="images/cap.png" alt="Cap" />
+          <div class="description">Cap</div>
+        </a>
+      </div>
+      <div class="gallery">
+        <a href="images/wallet.png" target="_blank">
+          <img src="images/wallet.png" alt="wallet" />
+          <div class="description">Wallet</div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

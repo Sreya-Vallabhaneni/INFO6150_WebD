@@ -1,0 +1,18 @@
+#Heading {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(4, 48, 4);
+  background-color: rgb(192, 218, 192);
+  padding: 22px;
+  float: center;
+}
+
+img {
+  width: 300px;
+  height: 166px;
+  float: left;
+}
+
+#join {
+  font-size: 20px;
+}
