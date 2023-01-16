@@ -4,7 +4,7 @@
 
 h1 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 70px;
+  font-size: 50px;
   text-align: center;
   text-decoration: underline;
 }
@@ -34,6 +34,9 @@ header {
   font-family: arial;
 }
 
+.card img {
+  height: 250px;
+}
 .location {
   color: rgb(43, 23, 85);
   font-size: 15px;
@@ -47,7 +50,7 @@ header {
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #000;
+  background-color: rgb(134, 2, 2);
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -56,4 +59,64 @@ header {
 
 .card button:hover {
   opacity: 0.7;
+}
+
+#share {
+  text-align: center;
+  padding: 20px;
+}
+footer {
+  text-align: end;
+}
+
+form {
+  border: 10px solid rgba(165, 97, 42, 0.27);
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: rgba(165, 97, 42, 0.159);
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+#exp {
+  border: 2px solid red;
+  height: 100px;
+}
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.cancelbtn,
+.signupbtn {
+  float: left;
+  width: 50%;
+}
+
+.container {
+  padding: 30px;
 }
