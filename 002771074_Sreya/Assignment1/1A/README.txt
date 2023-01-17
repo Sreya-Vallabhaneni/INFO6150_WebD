@@ -27,5 +27,36 @@ The <image> tag must have the following two attributes: src - Defines the image'
 -> <table>: The <table> element is used to generate HTML tables. Table rows are formed using the <tr> tag, 
 while data cells are created using the <td> tag. Regular items underneath <td> are by default left aligned.
 
--> <form>: To gather user input, an HTML form is utilized. Most frequently, a server processes the user input.
+-> <form>: 
+* To gather user input, an HTML form is utilized. Most frequently, a server processes the user input.
 When a form is submitted, an action is defined by the action property.
+* The response that is returned after submitting the form is specified by the target attribute.
+_blank: The reply appears in a new tab or window.
+* The HTTP method to utilize when submitting form data is specified by the method property.Both URL 
+variables (with method="get") and HTTP post transactions (with method="post") may be used to send the form data.
+When submitting form data, the default HTTP method is GET.
+* The <input> element can be displayed in several ways, depending on the type attribute.
+* The <label> element defines a label for several form elements. The for attribute of the <label> tag should
+ be equal to the id attribute of the <input> element to bind them together.
+* The <button> element defines a clickable button. 
+* placeholder: An input field's anticipated value is briefly described using the placeholder property.
+ Before the user inputs a value, the brief suggestion is shown in the input area.
+
+* * style.css:-
+-> CSS describes how HTML elements are to be displayed on screen, paper, or in other media.
+
+-> External stylesheets are stored in CSS files. All styling for the landing page and signup page is coded in style.css
+
+-> The element selector selects HTML elements based on the element name.
+
+-> The id selector chooses a particular HTML element by using the id property.The id selector is used to choose 
+a single distinct element since each element's id is distinct inside a page.
+A hash (#) character should be written after the element's id in order to pick it.
+
+->The class selector selects HTML elements with a specific class attribute.To select elements with a specific class, 
+write a period (.) character, followed by the class name.
+
+-> The universal selector (*) selects all HTML elements on the page.
+
+-> 
+
