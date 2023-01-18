@@ -58,5 +58,20 @@ write a period (.) character, followed by the class name.
 
 -> The universal selector (*) selects all HTML elements on the page.
 
--> 
+-> The CSS padding properties are used to generate space around an element's content, inside of any defined borders.
+
+->The text-align property is used to set the horizontal alignment of a text.
+A text can be left or right aligned, centered, or justified.
+
+->It's crucial to have a font that is simple to read. Your writing is made better by the font.
+The right color and text size for the font should be chosen as well. The choice of font significantly affects how readers
+interact with a website. Your brand may develop a strong identity with the help of the correct typeface.
+
+->The CSS margin properties are used to create space around elements, outside of any defined borders.
+With CSS, you have full control over the margins. There are properties for setting the margin for each 
+side of an element (top, right, bottom, and left).
+
+-> The CSS float property specifies how an element should float.
+-> CSS supports 140+ color names, HEX values, RGB values, RGBA values, HSL values, HSLA values, and opacity.
+
 
