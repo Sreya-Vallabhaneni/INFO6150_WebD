@@ -1,5 +1,16 @@
 * * Landing page and resgistration page for a local coffee shop made using HTML and CSS. 
 
+* CoffeeShop.html is the landing page for this website. 
+* This page has a join us option which lets user register, a gallery og images and shoes the business 
+hours of the coffee shop using the table html tag. 
+* There is map image used to display loaction of the coffee shop. If user clicks on the image, they get redirected 
+to google maps for navigation. 
+* When User clicks on on join us hyperlink, they get redirected to signup.html page.
+* This page has a registration form with email password and repeat password as input fields. 
+* Remember me is a button element. 
+* signup button submits the form while cancel willl reset the input fields of the form. 
+
+
 * * CoffeeShop.html and signup.html :-
 -> Used link tag to create favicon for the page and link the html document to its respective elxternal css stylesheet 
 in the head section. 
