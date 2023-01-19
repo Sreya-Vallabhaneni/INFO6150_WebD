@@ -1,17 +1,17 @@
-* * Landing page and resgistration page for a local coffee shop made using HTML and CSS. 
+* * Folder contains Landing page and share blog page for a Travel Blog website. All Images and auio files used are in 
+the website are used in the website are in images and auiod folder respectively.
 
-* CoffeeShop.html is the landing page for this website. 
-* This page has a join us option which lets user register, a gallery og images and shoes the business 
-hours of the coffee shop using the table html tag. 
-* There is map image used to display loaction of the coffee shop. If user clicks on the image, they get redirected 
-to google maps for navigation. 
-* When User clicks on on join us hyperlink, they get redirected to signup.html page.
-* This page has a registration form with email password and repeat password as input fields. 
-* Remember me is a button element. 
-* signup button submits the form while cancel willl reset the input fields of the form. 
+* Created cards using div, id and class tags.
+* Each card has an image, loaction, city, description, read more, audio, and youtue video.
+* When user clicks on readmore, they get redirected to the wikipedia informtion page of the city. 
+* Audio plays info/song about the city. 
+* using iframe, I have incorporated the youtube vidoes for each city. 
+* when user clicks on share you travel stories, the gp to the share.html page.\
+* on the share.html page, there is a form for user to add their blogs.
+* when user clicks on back to main page, he goes back to the landingPage.html.
+* Share button submits the form.
 
-
-* * CoffeeShop.html and signup.html :-
+* * landingPage.html and share.html:
 -> Used link tag to create favicon for the page and link the html document to its respective elxternal css stylesheet 
 in the head section. 
 
@@ -28,6 +28,12 @@ in the head section.
 
 -> <br/>: used to produce a line break in HTML. 
 
+-> class: The HTML class attribute is used to specify a class for an HTML element. Multiple HTML elements can share the same class
+
+-> id: An HTML element's id is specified via the id property. Within the HTML page, the id attribute's value must be distinct.
+To identify a specific style declaration in a style sheet, use the id property. Additionally, JavaScript uses it to access and change the element with the given id.
+Id has the following syntax: write a hash character (#), then an id name. The CSS properties should then be defined between curly braces.
+
 -> img: An image can be included in an HTML page using the <img> tag. Images are linked to web pages; 
 they are not actually placed into web pages. The referenced picture is held in place by the <img> element. 
 The <image> tag must have the following two attributes: src - Defines the image's source path.
@@ -35,8 +41,18 @@ The <image> tag must have the following two attributes: src - Defines the image'
 -> <h1> to <h6>: The <h1> to <h6> tags are used to define HTML headings. <h1> defines the most important heading.
  <h6> defines the least important heading.
 
--> <table>: The <table> element is used to generate HTML tables. Table rows are formed using the <tr> tag, 
-while data cells are created using the <td> tag. Regular items underneath <td> are by default left aligned.
+-> button onclick: When the user clicks the button the onclick funtion is activated and the designated action is performed. 
+
+-> Audio: The HTML <audio> element is used to play an audio file on a web page. The controls attribute adds audio controls,
+like play, pause, and volume.The <source> element allows you to specify alternative audio files which the browser
+may choose from. The browser will use the first recognized format.The text between the <audio> and </audio> tags will 
+only be displayed in browsers that do not support the <audio> element.
+
+-> Iframes: the HTML <iframe> tag specifies an inline frame.
+An inline frame is used to embed another document within the current HTML document.
+The target attribute of the link must refer to the name attribute of the iframe
+
+-> footer: Defines a footer for a document or a section. 
 
 -> <form>: 
 * To gather user input, an HTML form is utilized. Most frequently, a server processes the user input.
@@ -53,7 +69,7 @@ When submitting form data, the default HTTP method is GET.
 * placeholder: An input field's anticipated value is briefly described using the placeholder property.
  Before the user inputs a value, the brief suggestion is shown in the input area.
 
-* * style.css:-
+* *stylesheet.css:
 -> CSS describes how HTML elements are to be displayed on screen, paper, or in other media.
 
 -> External stylesheets are stored in CSS files. All styling for the landing page and signup page is coded in style.css
@@ -85,4 +101,3 @@ side of an element (top, right, bottom, and left).
 -> The CSS float property specifies how an element should float.
 -> CSS supports 140+ color names, HEX values, RGB values, RGBA values, HSL values, HSLA values, and opacity.
 
-* * images folder has all th images used for 1A.  
