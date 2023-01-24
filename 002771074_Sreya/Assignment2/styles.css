@@ -1,12 +1,10 @@
 * {
   background-color: rgb(58, 56, 56);
 }
-
 .topnav {
   background-color: black;
   overflow: hidden;
 }
-
 .topnav a {
   float: left;
   display: block;
@@ -17,24 +15,61 @@
   font-size: 17px;
   background-color: black;
 }
-
 #float-right {
   float: right;
 }
-
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: powderblue;
   color: black;
 }
-
 /* Add an active class to highlight the current page */
 .topnav a.active {
   background-color: powderblue;
   color: black;
 }
-
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.photo img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  float: left;
+  margin-left: 100px;
+  margin-top: 100px;
+  margin-bottom: 70px;
+}
+
+.intro {
+  margin-right: 80px;
+}
+.name {
+  text-align: center;
+  color: white;
+  text-decoration: underline white;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  margin-top: 230px;
+  margin-bottom: 40px;
+}
+
+.summary {
+  text-align: center;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  color: white;
+  font-size: 20px;
 }
