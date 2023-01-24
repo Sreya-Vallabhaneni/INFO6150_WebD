@@ -100,17 +100,15 @@
 .card-edu {
   display: inline-block;
   width: 40%;
-  padding: 10px;
+  padding: 20px;
   background-color: rgba(198, 255, 234, 0.775);
   position: relative;
   border-radius: 20px;
+  margin-right: 20px;
 }
 
 .card-edu:after {
-  content: "";
   display: block;
-  width: 0px;
-  height: 0px;
   background-color: rgba(198, 255, 234, 0.775);
   float: right;
 }
