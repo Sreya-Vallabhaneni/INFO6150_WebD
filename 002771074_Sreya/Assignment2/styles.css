@@ -285,6 +285,13 @@ figcaption {
   margin-left: 150px;
 }
 
+#table-contact a {
+  color: snow;
+}
+
+#table-contact a:hover {
+  color: green;
+}
 .con {
   margin-bottom: 150px;
 }
