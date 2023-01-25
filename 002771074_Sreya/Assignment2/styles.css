@@ -229,7 +229,7 @@ figcaption {
   position: absolute;
   bottom: 0;
   left: 10;
-  background-color: rgb(214, 249, 237);
+  background-color: rgba(214, 249, 237, 0.474);
   color: black;
   text-align: center;
   font-size: 20px;
