@@ -1,0 +1,436 @@
+* {
+  background-color: rgb(58, 56, 56);
+}
+
+.topnav {
+  background-color: black;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: black;
+}
+
+img {
+  height: auto;
+}
+
+#float-right {
+  float: right;
+}
+
+.topnav a:hover {
+  background-color: powderblue;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: powderblue;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.photo img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  float: left;
+  margin-left: 100px;
+  margin-top: 100px;
+  margin-bottom: 70px;
+  border-radius: 150px;
+}
+
+.intro {
+  margin-right: 80px;
+}
+
+.name {
+  text-align: center;
+  color: white;
+  text-decoration: underline white;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  margin-top: 230px;
+  margin-bottom: 40px;
+}
+
+.summary {
+  text-align: center;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  color: white;
+  font-size: 20px;
+}
+
+#About {
+  margin-bottom: 60px;
+}
+
+.heads {
+  font-size: 30px;
+  text-align: center;
+  background-color: powderblue;
+  width: auto;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin: 150px;
+}
+
+.card {
+  width: 20%;
+  padding: 80px;
+  text-align: center;
+  margin: 10px;
+  border: 20px solid black;
+  background-color: rgb(214, 249, 237);
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #ccc;
+}
+
+.card p,
+h2 {
+  background-color: rgb(214, 249, 237);
+  font-size: 20px;
+}
+
+.container-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-skills {
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+@media screen {
+  .card {
+    width: 300px;
+    margin: 10px;
+  }
+}
+
+.intern-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.internship {
+  width: 80%;
+  margin: 10px 0;
+  text-align: left;
+  padding: 10px;
+  border: 5px solid rgb(214, 249, 237);
+  margin: 40px;
+  text-align: center;
+  color: snow;
+}
+
+.internship h3 {
+  margin: 0;
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+}
+
+.internship h4 {
+  margin-top: 10px;
+  color: #3498db;
+}
+
+.proj {
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+
+.project-table {
+  margin: 0 auto;
+  width: 70%;
+  border-collapse: collapse;
+  border: 3px solid rgb(214, 249, 237);
+  font-size: 1.2em;
+  text-align: center;
+  box-shadow: 5px 5px 10px rgb(214, 249, 237);
+}
+
+.project-table th {
+  background-color: rgb(214, 249, 237);
+  padding: 10px;
+  font-weight: bold;
+  border-left: 1px solid black;
+  color: black;
+  padding: 20px;
+}
+
+.project-table td {
+  padding: 10px;
+  border-left: 1px solid black;
+  padding: 30px;
+}
+
+.project-table tr {
+  border-top: 1px solid black;
+  color: white;
+  background-color: white;
+}
+
+.project-table td:hover {
+  background-color: #3498db;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+figure {
+  position: relative;
+  margin: 20px;
+  width: 300px;
+}
+
+figure img {
+  width: 100%;
+  box-shadow: 0px 0px 20px #3498db;
+}
+
+figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 10;
+  background-color: rgba(214, 249, 237, 0.474);
+  color: black;
+  text-align: center;
+  font-size: 20px;
+}
+
+.contact-me {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-column {
+  width: 50%;
+  text-align: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.left-column {
+  width: 50%;
+  text-align: center;
+  margin-right: 200px;
+  margin-top: 150px;
+  margin-left: 200px;
+  border: 3px solid rgb(214, 249, 237);
+  border-radius: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.circular-image {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  float: right;
+  margin-right: 200px;
+  box-shadow: 5px 5px 10px rgb(214, 249, 237);
+}
+
+.fa {
+  margin-right: 10px;
+  color: #ccc;
+}
+
+#table-contact {
+  margin-right: 100px;
+}
+
+#table-contact img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-left: 150px;
+}
+
+#table-contact a {
+  color: snow;
+}
+
+#table-contact a:hover {
+  color: green;
+}
+.con {
+  margin-bottom: 150px;
+}
+
+footer {
+  border: 3px solid rgb(0, 0, 0);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+  }
+  .topnav .icon {
+    display: block;
+  }
+
+  .topnav {
+    flex-wrap: wrap;
+  }
+
+  .topnav a.responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .photo img {
+    width: 80%;
+    height: auto;
+    float: none;
+    margin: 0;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+
+  .intro {
+    margin-right: 10px;
+    text-align: center;
+  }
+  .name {
+    margin-top: 50px;
+    font-size: 10px;
+  }
+  .summary {
+    font-size: 10px;
+  }
+  #About {
+    margin-bottom: 20px;
+  }
+
+  .card-container {
+    flex-wrap: wrap;
+    margin: 50px;
+  }
+  .card {
+    width: 45%;
+    padding: 40px;
+    margin: 5px;
+    border-width: 10px;
+    font-size: 16px;
+  }
+
+  .project-table {
+    width: 60%;
+    font-size: 0.8em;
+  }
+  .project-table th,
+  .project-table td {
+    padding: 5px;
+    font-size: 0.8em;
+  }
+  .project-table th {
+    padding: 5px;
+  }
+
+  .right-column {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .left-column {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 50px;
+    padding: 20px;
+    border: none;
+  }
+
+  .circular-image {
+    width: 150px;
+    height: 150px;
+    float: none;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 100px;
+  }
+
+  #table-contact img {
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+    float: none;
+  }
+
+  #table-contact {
+    margin-right: 0;
+  }
+
+  footer {
+    border: 3px solid rgb(0, 0, 0);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .footer-content p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
