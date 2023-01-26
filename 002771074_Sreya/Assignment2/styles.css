@@ -1,10 +1,12 @@
 * {
   background-color: rgb(58, 56, 56);
 }
+
 .topnav {
   background-color: black;
   overflow: hidden;
 }
+
 .topnav a {
   float: left;
   display: block;
@@ -15,6 +17,11 @@
   font-size: 17px;
   background-color: black;
 }
+
+img {
+  height: auto;
+}
+
 #float-right {
   float: right;
 }
@@ -58,6 +65,7 @@
 .intro {
   margin-right: 80px;
 }
+
 .name {
   text-align: center;
   color: white;
@@ -305,4 +313,124 @@ footer {
 
 .footer-content p {
   margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+  }
+  .topnav .icon {
+    display: block;
+  }
+
+  .topnav {
+    flex-wrap: wrap;
+  }
+
+  .topnav a.responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .photo img {
+    width: 80%;
+    height: auto;
+    float: none;
+    margin: 0;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+
+  .intro {
+    margin-right: 10px;
+    text-align: center;
+  }
+  .name {
+    margin-top: 50px;
+    font-size: 10px;
+  }
+  .summary {
+    font-size: 10px;
+  }
+  #About {
+    margin-bottom: 20px;
+  }
+
+  .card-container {
+    flex-wrap: wrap;
+    margin: 50px;
+  }
+  .card {
+    width: 45%;
+    padding: 40px;
+    margin: 5px;
+    border-width: 10px;
+    font-size: 16px;
+  }
+
+  .project-table {
+    width: 60%;
+    font-size: 0.8em;
+  }
+  .project-table th,
+  .project-table td {
+    padding: 5px;
+    font-size: 0.8em;
+  }
+  .project-table th {
+    padding: 5px;
+  }
+
+  .right-column {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .left-column {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 50px;
+    padding: 20px;
+    border: none;
+  }
+
+  .circular-image {
+    width: 150px;
+    height: 150px;
+    float: none;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 100px;
+  }
+
+  #table-contact img {
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+    float: none;
+  }
+
+  #table-contact {
+    margin-right: 0;
+  }
+
+  footer {
+    border: 3px solid rgb(0, 0, 0);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .footer-content p {
+    margin: 0;
+    font-size: 14px;
+  }
 }
