@@ -75,3 +75,11 @@ side of an element (top, right, bottom, and left).
 
 -> CSS supports 140+ color names, HEX values, RGB values, RGBA values, HSL values, HSLA values, and opacity.
 
+BONUS:
+
+-> Navbar
+-> Section wise navigation
+-> Cards 
+-> Hover effect 
+-> Constant color scheme throught out 
+-> box-shadow 
