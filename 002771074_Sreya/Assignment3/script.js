@@ -74,3 +74,64 @@ function AddNewStudent() {
   tdNode2.appendChild(trCheckboxCell2);
   tbodyRef.appendChild(tdNode2);
 }
+
+function isChecked() {
+  var checkBox = document.querySelectorAll("input[type=checkbox]");
+  var checked = false;
+  for (var i = 0; i < checkBox.length; i++) {
+    if (checkBox[i].checked) {
+      checked = true;
+      break;
+    }
+  }
+  return checked;
+}
+
+function toggleCol(checkbox) {
+  var table = document.getElementById("myTable");
+  var RowHead = table.children[0].children[0];
+
+  var myRow = checkbox.closest("tr");
+  if (checkbox.checked) {
+    var newDelete = document.createElement("td");
+    var newEdit = document.createElement("td");
+    newEdit.innerHTML =
+      '<button id="edit" type="button" onclick="editRow(this)">Edit</button>';
+    newDelete.innerHTML =
+      '<button id="delete" type="button" onclick="deleteRow(this)">Delete</button>';
+    myRow.lastChild.after(newDelete);
+    myRow.lastChild.after(newEdit);
+
+    if (RowHead.lastChild.innerHTML != "EDIT") {
+      var newDelColumn = document.createElement("th");
+      newDelColumn.innerHTML = "DELETE";
+      RowHead.lastChild.after(newDelColumn);
+      var newEditColumn = document.createElement("th");
+      newEditColumn.innerHTML = "EDIT";
+      RowHead.lastChild.after(newEditColumn);
+    }
+    myRow.style.backgroundColor = "orange";
+    document.getElementById("button").style.backgroundColor = "orange";
+  } else {
+    myRow.style.backgroundColor = "white";
+
+    if (RowHead.lastChild.innerHTML == "EDIT" && !isChecked()) {
+      RowHead.removeChild(RowHead.lastChild);
+      RowHead.removeChild(RowHead.lastChild);
+    }
+    document.getElementById("button").style.backgroundColor = "gray";
+    myRow.removeChild(myRow.lastChild);
+    myRow.removeChild(myRow.lastChild);
+  }
+}
+
+function hide(image) {
+  var myRow = image.closest("tr");
+  var nextRow = myRow.nextElementSibling;
+
+  if (nextRow.style.display == "table-row") {
+    nextRow.style.display = "none";
+  } else {
+    nextRow.style.display = "table-row";
+  }
+}
