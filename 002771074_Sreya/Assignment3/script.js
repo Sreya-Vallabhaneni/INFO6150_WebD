@@ -90,44 +90,48 @@ function isChecked() {
 function toggleCol(checkbox) {
   var table = document.getElementById("myTable");
   var RowHead = table.children[0].children[0];
+  var row = checkbox.closest("tr");
 
-  var myRow = checkbox.closest("tr");
   if (checkbox.checked) {
-    var newDelete = document.createElement("td");
-    var newEdit = document.createElement("td");
-    newEdit.innerHTML =
+    var DeleteCol = document.createElement("td");
+    var EditCol = document.createElement("td");
+
+    EditCol.innerHTML =
       '<button id="edit" type="button" onclick="editRow(this)">Edit</button>';
-    newDelete.innerHTML =
+    DeleteCol.innerHTML =
       '<button id="delete" type="button" onclick="deleteRow(this)">Delete</button>';
-    myRow.lastChild.after(newDelete);
-    myRow.lastChild.after(newEdit);
+
+    row.lastChild.after(DeleteCol);
+    row.lastChild.after(EditCol);
 
     if (RowHead.lastChild.innerHTML != "EDIT") {
       var newDelColumn = document.createElement("th");
       newDelColumn.innerHTML = "DELETE";
       RowHead.lastChild.after(newDelColumn);
+
       var newEditColumn = document.createElement("th");
       newEditColumn.innerHTML = "EDIT";
       RowHead.lastChild.after(newEditColumn);
     }
-    myRow.style.backgroundColor = "orange";
+
+    row.style.backgroundColor = "orange";
     document.getElementById("button").style.backgroundColor = "orange";
   } else {
-    myRow.style.backgroundColor = "white";
+    row.style.backgroundColor = "white";
 
     if (RowHead.lastChild.innerHTML == "EDIT" && !isChecked()) {
       RowHead.removeChild(RowHead.lastChild);
       RowHead.removeChild(RowHead.lastChild);
     }
     document.getElementById("button").style.backgroundColor = "gray";
-    myRow.removeChild(myRow.lastChild);
-    myRow.removeChild(myRow.lastChild);
+    row.removeChild(row.lastChild);
+    row.removeChild(row.lastChild);
   }
 }
 
 function hide(image) {
-  var myRow = image.closest("tr");
-  var nextRow = myRow.nextElementSibling;
+  var row = image.closest("tr");
+  var nextRow = row.nextElementSibling;
 
   if (nextRow.style.display == "table-row") {
     nextRow.style.display = "none";
