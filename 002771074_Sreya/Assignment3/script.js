@@ -106,6 +106,10 @@ function deleteRow(rowObject) {
   alert("Row deleted " + val + " successfully!");
 }
 
+function editRow(rowObject) {
+  var input = prompt("Enter new value:");
+}
+
 function toggleCol(checkbox) {
   var table = document.getElementById("myTable");
   var RowHead = table.children[0].children[0];
