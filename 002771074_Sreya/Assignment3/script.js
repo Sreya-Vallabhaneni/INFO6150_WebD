@@ -87,6 +87,25 @@ function isChecked() {
   return checked;
 }
 
+function deleteRow(rowObject) {
+  var tr = rowObject.parentElement.parentElement;
+
+  document.getElementById("myTable").deleteRow(tr.rowIndex + 1);
+  document.getElementById("myTable").deleteRow(tr.rowIndex);
+  var table = document.getElementById("myTable");
+  var headRow = table.children[0].children[0];
+  if (isChecked() == false) {
+    document.getElementById("button").style.backgroundColor = "grey";
+  }
+
+  var val = tr.firstElementChild.nextElementSibling.innerHTML;
+  if (headRow.lastChild.innerHTML == "EDIT" && isChecked() == false) {
+    headRow.removeChild(headRow.lastChild);
+    headRow.removeChild(headRow.lastChild);
+  }
+  alert("Row deleted " + val + " successfully!");
+}
+
 function toggleCol(checkbox) {
   var table = document.getElementById("myTable");
   var RowHead = table.children[0].children[0];
