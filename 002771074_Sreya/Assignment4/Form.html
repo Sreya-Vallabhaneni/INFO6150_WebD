@@ -1,92 +1,206 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
- <head>
-  <title>Feedback</title>
-  <style>
-    label {	float: left;
-			width: 150px;}
-      #container{
-          width: 700px;
-          margin: auto;
-          background-color: beige;
-      } 
-      main{
-          padding: 50px;
+  <head>
+    <title>Feedback</title>
+
+    <style>
+      label {
+        float: left;
+        width: 150px;
       }
-  </style>
- </head>
- <body>
- <div id="container">
-	 
-	 <main>
-	 <h2>Feeback</h2>
-	 <h3>Love something? Hate something? Let us know!</h3>
-		 Note : Fields marked with an asterisk(*) are mandatory
-		 <br><br>
-		 <form method="post" novalidate>
-			<label>Title*:</label>
-			<input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
-			<input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
-			<input type="radio" name="title" id="mrs" value="mrs" required="required"/>Mrs.
-			<br><br>
-			<label for="firstName">First Name*:</label>
-			<input type="text" name="firstName" id="firstName" placeholder="First Name" />	
-			<br><br>
-			
+      #container {
+        width: 700px;
+        margin: auto;
+        background-color: beige;
+      }
+      main {
+        padding: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" validate>
+      <main>
+        <h2>Feeback</h2>
+        <h3>Love something? Hate something? Let us know!</h3>
+        Note : Fields marked with an asterisk(*) are mandatory
+        <br /><br />
+        <form method="post" id="myForm">
+          <label>Title*:</label>
+          <input
+            type="radio"
+            name="title"
+            id="miss"
+            value="miss"
+            required="required"
+          />Miss
+          <input
+            type="radio"
+            name="title"
+            id="mr"
+            value="mr"
+            required="required"
+          />Mr.
+          <input
+            type="radio"
+            name="title"
+            id="mrs"
+            value="mrs"
+            required="required"
+          />Mrs. <br /><br />
 
-			<label for="lastName">Last Name*:</label>
-			<input type="text" name="lastName" id="lastName" placeholder="Last Name" />
-			<br><br>
-			
+          <label for="firstName">First Name*:</label>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            placeholder="First Name"
+            required="required"
+          />
+          <br />
+          <div id="error_firstName" style="display: none; color: red">
+            Invalid First Name, Please enter valid first name
+          </div>
+          <br />
 
-			<label for="emailId">Email Id*:</label>
-			<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" />
-			<br><br>
-			
+          <label for="lastName">Last Name*:</label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            placeholder="Last Name"
+            required="required"
+          />
 
-			<label for="phoneNumber">Phone Number*:</label>
-			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" />
-			<br><br>
+          <br />
+          <div id="error_lastName" style="display: none; color: red">
+            Invalid Last Name, Please enter valid Last name
+          </div>
+          <br />
 
-			<label for="streetAddress1">Street Address 1*:</label>
-			<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" />
-			<br><br>
+          <label for="emailId">Email Id*:</label>
+          <input
+            type="text"
+            name="emailId"
+            id="emailId"
+            placeholder="yourname@domain.com"
+            required="required"
+          />
+          <br />
+          <div id="error_emailId" style="display: none; color: red">
+            Invalid emailId, Please enter northeastern id
+          </div>
+          <br />
 
-			<label for="streetAddress2">Street Address 2:</label>
-			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
-			<br><br>
+          <label for="phoneNumber">Phone Number*:</label>
+          <input
+            type="text"
+            name="phoneNumber"
+            id="phoneNumber"
+            placeholder="xxx-xxx-xxxx"
+            required="required"
+          />
+          <br />
+          <div id="error_phoneNumber" style="display: none; color: red">
+            Invalid phone number, Please enter valid phone number in
+            xxx-xxx-xxxx format.
+          </div>
+          <br />
 
-			<label for="city">City*:</label>
-			<input type="text" name="city" id="city" placeholder="city" />
-			<br><br>
+          <label for="streetAddress1">Street Address 1*:</label>
+          <input
+            type="text"
+            name="streetAddress1"
+            id="streetAddress1"
+            placeholder="address"
+            required="required"
+          />
+          <br /><br />
 
-			<label for="state">State*:</label>
-			<input type="text" name="state" id="state" placeholder="state" />
-			<br><br>
-			
-            <label for="zipcode">ZipCode*:</label>
-			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" />
-			<br><br>
-             
-            <label for="zipcode">How did you hear*:</label>
-			<input type='checkbox' name="source" value="facebook" /> Facebook
-            <input type='checkbox' name="source" value="google" /> Google
-            <input type='checkbox' name="source" value="yelp" /> Yelp 
-			<br><br> 
-             
-			<label for="comments">Comments*:</label>
-			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
-			<br><br>
-			<input type="Submit">
-			<input type="Reset">
-			<br><br>
-		 </form>
-	 </main>
- </div>
+          <label for="streetAddress2">Street Address 2:</label>
+          <input
+            type="text"
+            name="streetAddress2"
+            id="streetAddress2"
+            placeholder="address"
+          />
+          <br /><br />
 
- <script>
- 
- </script>
+          <label for="city">City*:</label>
+          <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="city"
+            required="required"
+          />
+          <br /><br />
 
- </body>
+          <label for="state">State*:</label>
+          <input
+            type="text"
+            name="state"
+            id="state"
+            placeholder="state"
+            required="required"
+          />
+          <br /><br />
+
+          <label for="zipcode">ZipCode*:</label>
+          <input
+            type="text"
+            name="zipcode"
+            id="zipcode"
+            placeholder="xxxxxx"
+            required="required"
+          />
+          <br />
+          <div id="error_zipcode" style="display: none; color: red">
+            Invalid zipcode, please neter 5 digit US zipcode.
+          </div>
+          <br />
+
+          <label for="zipcode">How did you hear*:</label>
+          <input
+            type="checkbox"
+            name="source"
+            value="facebook"
+            required="required"
+          />
+
+          Facebook
+          <input
+            type="checkbox"
+            name="source"
+            value="google"
+            required="required"
+          />
+          Google
+          <input
+            type="checkbox"
+            name="source"
+            value="yelp"
+            required="required"
+          />
+          Yelp <br /><br />
+
+          <label for="comments">Comments*:</label>
+          <textarea
+            name="text"
+            id="comments"
+            placeholder="Your comments"
+            rows="5"
+            cols="25"
+            required="required"
+          ></textarea>
+          <br /><br />
+          <input type="Submit" value="SUBMIT" />
+          <input type="Reset" />
+          <br /><br />
+        </form>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
