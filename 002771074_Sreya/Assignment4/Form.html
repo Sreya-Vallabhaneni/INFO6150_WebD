@@ -25,7 +25,7 @@
         <h3>Love something? Hate something? Let us know!</h3>
         Note : Fields marked with an asterisk(*) are mandatory
         <br /><br />
-        <form method="post" id="myForm">
+        <form id="myForm" onsubmit="displayValues(); return false;">
           <label>Title*:</label>
           <input
             type="radio"
@@ -181,6 +181,8 @@
           <br /><br />
           <div id="checkboxContainer"></div>
           <br />
+
+          <div id="textAreaContainer" style="display: none"></div>
           <br />
 
           <label for="comments">Comments*:</label>
@@ -197,6 +199,12 @@
           <input type="Reset" />
           <br /><br />
         </form>
+        <br />
+        <br />
+
+        <table id="resultTable">
+          <tr></tr>
+        </table>
       </main>
     </div>
 

@@ -1,5 +1,4 @@
 var form = document.getElementById("myForm");
-form.addEventListener("submit", submitted);
 
 // set everything to false
 var validFirstName = false;
@@ -13,7 +12,7 @@ var regExFirstName = /^[a-zA-Z]+$/;
 var regExLastName = /^[a-zA-Z]+$/;
 var regExEmail = /^[a-zA-Z0-9_.+-]+@northeastern.edu$/;
 var regExPhone = /\d{3}-?\d{3}-\d{4}$/;
-var regExZip = /^\d{5}/;
+var regExZip = /^\d{5}$/;
 
 //values
 var firstName = document.getElementById("firstName");
@@ -57,7 +56,7 @@ function validate(e) {
         document.getElementById(em).style.display = "inline-block";
         this.style.border = "2px solid red";
         validLastName = false;
-        console.log("validLastname", validlastName);
+        console.log("validLastname", validLastName);
       } else {
         document.getElementById(em).style.display = "none";
         this.style.border = "";
@@ -78,6 +77,7 @@ function validate(e) {
         validEmail = true;
         console.log("validEmail", validEmail);
       }
+      break;
 
     case "phoneNumber":
       if (!value.trim().match(regExPhone)) {
@@ -106,6 +106,7 @@ function validate(e) {
 }
 
 const drinks = document.getElementById("drinks");
+const textAreaContainer = document.getElementById("textAreaContainer");
 
 drinks.onchange = function () {
   const selectedOption = drinks.options[drinks.selectedIndex];
@@ -119,24 +120,45 @@ drinks.onchange = function () {
 
   const checkboxLabel = document.createElement("label");
   checkboxLabel.htmlFor = `checkbox-${selectedOption.value}`;
-  checkboxLabel.innerHTML = `${selectedOption.text}`;
+  checkboxLabel.innerHTML = ` Large ${selectedOption.text}`;
 
   const checkboxItem = document.createElement("div");
   checkboxItem.appendChild(checkbox);
   checkboxItem.appendChild(checkboxLabel);
 
   checkboxContainer.appendChild(checkboxItem);
+
+  checkbox.addEventListener("change", function () {
+    if (checkbox.checked) {
+      const textArea = document.createElement("textarea");
+      textArea.id = "myTextArea";
+      textArea.required = true;
+      textAreaContainer.appendChild(textArea);
+
+      const textAreaLabel = document.createElement("label");
+      textAreaLabel.innerHTML = "Additional comments:*";
+      textAreaLabel.setAttribute("for", "myTextArea");
+      textAreaContainer.insertBefore(
+        textAreaLabel,
+        textAreaContainer.firstChild
+      );
+
+      textAreaContainer.style.display = "block";
+    } else {
+      textAreaContainer.style.display = "none";
+      textAreaContainer.innerHTML = "";
+    }
+  });
 };
 
-// write a function submitted
-function submitted(e) {
-  //e.preventDefault();
-  console.log("validFirstname", validFirstName);
-  if (validFirstName) {
-    alert("Data entered succesfull");
-    // window.location.href = "Form.html";
-  } else {
-    alert("Please enter valid details");
-    //window.location.href = "Form.html";
-  }
+function displayValues() {
+  let Firstname = document.getElementById("firstName").value;
+  let Lastname = document.getElementById("lastName").value;
+
+  let table = document.getElementById("resultTable");
+  let row1 = table.insertRow();
+  let cell1 = row1.insertCell(0);
+  let cell2 = row1.insertCell(1);
+  cell1.innerHTML = "First Name: ";
+  cell2.innerHTML = Firstname;
 }
