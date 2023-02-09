@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <title>Feedback</title>
-
     <style>
       label {
         float: left;
@@ -16,52 +15,67 @@
       main {
         padding: 50px;
       }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      table {
+        margin: 0 auto;
+        width: 95%;
+        border-collapse: collapse;
+      }
+
+      th {
+        background-color: #cccccc;
+      }
     </style>
   </head>
   <body>
-    <div id="container" validate>
+    <div id="container">
       <main>
         <h2>Feeback</h2>
         <h3>Love something? Hate something? Let us know!</h3>
         Note : Fields marked with an asterisk(*) are mandatory
         <br /><br />
-        <form id="myForm" onsubmit="displayValues(); return false;">
+        <form method="post" id="myForm">
           <label>Title*:</label>
           <input
             type="radio"
             name="title"
-            id="miss"
+            id="Miss"
             value="miss"
             required="required"
           />Miss
           <input
             type="radio"
             name="title"
-            id="mr"
+            id="Mr"
             value="mr"
             required="required"
           />Mr.
           <input
             type="radio"
             name="title"
-            id="mrs"
+            id="Mrs"
             value="mrs"
             required="required"
           />Mrs. <br /><br />
-
           <label for="firstName">First Name*:</label>
           <input
             type="text"
             name="firstName"
             id="firstName"
             placeholder="First Name"
-            required="required"
+            required
           />
-          <br />
+          <br /><br />
           <div id="error_firstName" style="display: none; color: red">
             Invalid First Name, Please enter valid first name
+            <br /><br />
           </div>
-          <br />
 
           <label for="lastName">Last Name*:</label>
           <input
@@ -69,14 +83,13 @@
             name="lastName"
             id="lastName"
             placeholder="Last Name"
-            required="required"
+            required
           />
-
-          <br />
+          <br /><br />
           <div id="error_lastName" style="display: none; color: red">
             Invalid Last Name, Please enter valid Last name
+            <br /><br />
           </div>
-          <br />
 
           <label for="emailId">Email Id*:</label>
           <input
@@ -84,13 +97,13 @@
             name="emailId"
             id="emailId"
             placeholder="yourname@domain.com"
-            required="required"
+            required
           />
-          <br />
+          <br /><br />
           <div id="error_emailId" style="display: none; color: red">
-            Invalid emailId, Please enter northeastern id
+            Invalid Email ID, enter valid @northeastern.edu ID
+            <br /><br />
           </div>
-          <br />
 
           <label for="phoneNumber">Phone Number*:</label>
           <input
@@ -98,14 +111,13 @@
             name="phoneNumber"
             id="phoneNumber"
             placeholder="xxx-xxx-xxxx"
-            required="required"
+            required
           />
-          <br />
+          <br /><br />
           <div id="error_phoneNumber" style="display: none; color: red">
-            Invalid phone number, Please enter valid phone number in
-            xxx-xxx-xxxx format.
+            Invalid Phone Number, Phone number can only be numeric
+            <br /><br />
           </div>
-          <br />
 
           <label for="streetAddress1">Street Address 1*:</label>
           <input
@@ -113,7 +125,7 @@
             name="streetAddress1"
             id="streetAddress1"
             placeholder="address"
-            required="required"
+            required
           />
           <br /><br />
 
@@ -132,7 +144,7 @@
             name="city"
             id="city"
             placeholder="city"
-            required="required"
+            required
           />
           <br /><br />
 
@@ -142,7 +154,7 @@
             name="state"
             id="state"
             placeholder="state"
-            required="required"
+            required
           />
           <br /><br />
 
@@ -151,39 +163,109 @@
             type="text"
             name="zipcode"
             id="zipcode"
-            placeholder="xxxxxx"
-            required="required"
+            placeholder="xxxxx"
+            required
           />
-          <br />
+          <br /><br />
           <div id="error_zipcode" style="display: none; color: red">
-            Invalid zipcode, please neter 5 digit US zipcode.
+            Invalid Zip Code, Zip code can only be 5 digit number
+            <br /><br />
           </div>
-          <br />
 
-          <label for="hear">How did you hear*:</label>
-          <input type="checkbox" name="source" value="facebook" />
-
+          <label for="Hear" id="Hear">How did you hear*:</label>
+          <input
+            type="checkbox"
+            name="source"
+            value="Facebook"
+            onclick="Hear(this)"
+          />
           Facebook
-          <input type="checkbox" name="source" value="google" />
+          <input
+            type="checkbox"
+            name="source"
+            value="Google"
+            onclick="Hear(this)"
+          />
           Google
-          <input type="checkbox" name="source" value="yelp" />
+          <input
+            type="checkbox"
+            name="source"
+            value="Yelp"
+            onclick="Hear(this)"
+          />
           Yelp <br /><br />
 
-          <label for="drinks">Drinks:</label>
-          <select id="drinks">
-            <option value="option1">Iced Latte</option>
-            <option value="option2">Frappuccino</option>
-            <option value="option3">Cold Brew</option>
-            <option value="option4">Iced Mocha</option>
-            <option value="option5">Americano</option>
+          <label for="Drinks">Drinks:</label>
+          <select
+            name="drinks"
+            id="drinks"
+            onchange="dropDownChange(this.value)"
+          >
+            <option value="">-- Select --</option>
+            <option value="Frappe">Frappe</option>
+            <option value="Latte">Latte</option>
+            <option value="Espresso">Espresso</option>
+            <option value="Cold">Cold Brew</option>
+            <option value="hotcoco">Hot Coco</option>
           </select>
-
           <br /><br />
-          <div id="checkboxContainer"></div>
-          <br />
 
-          <div id="textAreaContainer" style="display: none"></div>
-          <br />
+          <div id="Large_div">
+            <label for="large" id="largelbl">Large </label><br />
+            <div id="Frappe">
+              <input
+                type="checkbox"
+                name="large"
+                value="Large Frappe"
+                onclick="checkboxClicked(this)"
+              />
+              Frappe
+            </div>
+            <div id="Latte">
+              <input
+                type="checkbox"
+                name="large"
+                value="Large Latte"
+                onclick="checkboxClicked(this)"
+              />
+              Latte
+            </div>
+            <div id="Espresso">
+              <input
+                type="checkbox"
+                name="large"
+                value="Large Espresso"
+                onclick="checkboxClicked(this)"
+              />
+              Espresso
+            </div>
+            <div id="Cold">
+              <input
+                type="checkbox"
+                name="large"
+                value="Large Cold Brew"
+                onclick="checkboxClicked(this)"
+              />
+              Cold Brew
+            </div>
+            <div id="hotcoco">
+              <input
+                type="checkbox"
+                name="large"
+                value="Hot Coco"
+                onclick="checkboxClicked(this)"
+              />
+              Hot Coco
+            </div>
+            <br /><br />
+          </div>
+
+          <div id="Additional">
+            <label for="inst">Additional Instuctions:</label>
+            <input type="text" name="inst" id="inst" />
+            <br /><br />
+            <br /><br />
+          </div>
 
           <label for="comments">Comments*:</label>
           <textarea
@@ -192,20 +274,45 @@
             placeholder="Your comments"
             rows="5"
             cols="25"
-            required="required"
+            required
           ></textarea>
           <br /><br />
-          <input type="Submit" value="SUBMIT" />
-          <input type="Reset" />
+          <input type="Submit" id="submitForm" />
+          <input type="Reset" id="resetForm" />
           <br /><br />
         </form>
-        <br />
-        <br />
-
-        <table id="resultTable">
-          <tr></tr>
-        </table>
       </main>
+    </div>
+    <br /><br />
+    <div id="divTbl">
+      <table id="myTable">
+        <tr>
+          <th>Title</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Id</th>
+          <th>Phone Number</th>
+          <th>Street Address 1</th>
+
+          <th>Street Address 2</th>
+
+          <th>City</th>
+
+          <th>State</th>
+
+          <th>Zip</th>
+
+          <th>Referal</th>
+
+          <th>Comments</th>
+
+          <th>Feedback</th>
+
+          <th>Reason</th>
+
+          <th>Additional Comments</th>
+        </tr>
+      </table>
     </div>
 
     <script src="script.js"></script>

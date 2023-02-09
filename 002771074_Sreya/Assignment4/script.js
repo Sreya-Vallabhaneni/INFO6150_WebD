@@ -1,84 +1,80 @@
-var form = document.getElementById("myForm");
+var cbSource = document.getElementsByName("source");
+for (i = 0; i < cbSource.length; i++) {
+  cbSource[i].required = true;
+}
 
-// set everything to false
+var form = document.getElementById("myForm");
+form.addEventListener("submit", submitted);
+
+document.getElementById("Large_div").style.display = "none";
+document.getElementById("Frappe").style.display = "none";
+document.getElementById("Latte").style.display = "none";
+document.getElementById("Espresso").style.display = "none";
+document.getElementById("Cold").style.display = "none";
+document.getElementById("hotcoco").style.display = "none";
+document.getElementById("Additional").style.display = "none";
+
 var validFirstName = false;
 var validLastName = false;
 var validEmail = false;
 var validPhone = false;
-var validZip = false;
+var validZipCode = false;
 
-//regex
-var regExFirstName = /^[a-zA-Z]+$/;
-var regExLastName = /^[a-zA-Z]+$/;
-var regExEmail = /^[a-zA-Z0-9_.+-]+@northeastern.edu$/;
-var regExPhone = /\d{3}-?\d{3}-\d{4}$/;
-var regExZip = /^\d{5}$/;
+var regExName = /^[a-z A-Z]+$/;
+var regExPhone = /^\d{3}-\d{3}-\d{4}$/;
+var regExEmailId = /^([a-z\d\.]+@northeastern.edu)$/;
+var regExZipCode = /^\d{5}$/;
 
-//values
 var firstName = document.getElementById("firstName");
 firstName.addEventListener("input", validate);
-
 var lastName = document.getElementById("lastName");
 lastName.addEventListener("input", validate);
-
 var emailId = document.getElementById("emailId");
 emailId.addEventListener("input", validate);
-
 var phoneNumber = document.getElementById("phoneNumber");
 phoneNumber.addEventListener("input", validate);
-
 var zipcode = document.getElementById("zipcode");
 zipcode.addEventListener("input", validate);
 
-//function validate
 function validate(e) {
   var value = e.target.value;
-  var type = this.id; // id for each switch case
+  var type = this.id;
   var em = "error_" + type;
 
   switch (type) {
     case "firstName":
-      if (!value.trim().match(regExFirstName)) {
-        document.getElementById(em).style.display = "inline-block";
+      if (!value.trim().match(regExName)) {
+        document.getElementById(em).style.display = "block";
         this.style.border = "2px solid red";
         validFirstName = false;
-        console.log("validFirstname", validFirstName);
       } else {
         document.getElementById(em).style.display = "none";
         this.style.border = "";
         validFirstName = true;
-        console.log("validFirstname", validFirstName);
       }
       break;
-
     case "lastName":
-      if (!value.trim().match(regExLastName)) {
-        document.getElementById(em).style.display = "inline-block";
+      if (!value.trim().match(regExName)) {
+        document.getElementById(em).style.display = "block";
         this.style.border = "2px solid red";
         validLastName = false;
-        console.log("validLastname", validLastName);
       } else {
         document.getElementById(em).style.display = "none";
         this.style.border = "";
         validLastName = true;
-        console.log("validLastname", validFirstName);
       }
       break;
-
     case "emailId":
-      if (!value.trim().match(regExEmail)) {
-        document.getElementById(em).style.display = "inline-block";
+      if (!value.trim().match(regExEmailId)) {
+        document.getElementById(em).style.display = "block";
         this.style.border = "2px solid red";
         validEmail = false;
-        console.log("validEmail", validEmail);
       } else {
         document.getElementById(em).style.display = "none";
         this.style.border = "";
         validEmail = true;
-        console.log("validEmail", validEmail);
       }
       break;
-
     case "phoneNumber":
       if (!value.trim().match(regExPhone)) {
         document.getElementById(em).style.display = "block";
@@ -90,75 +86,210 @@ function validate(e) {
         validPhone = true;
       }
       break;
-
     case "zipcode":
-      if (!value.trim().match(regExZip)) {
+      if (!value.trim().match(regExZipCode)) {
         document.getElementById(em).style.display = "block";
         this.style.border = "2px solid red";
-        validZip = false;
+        validZipCode = false;
       } else {
         document.getElementById(em).style.display = "none";
         this.style.border = "";
-        validZip = true;
+        validZipCode = true;
       }
       break;
   }
 }
 
-const drinks = document.getElementById("drinks");
-const textAreaContainer = document.getElementById("textAreaContainer");
+function dropDownChange(value) {
+  var cbarray = document.getElementsByName("reason");
+  for (i = 0; i < cbarray.length; i++) cbarray[i].checked = false;
 
-drinks.onchange = function () {
-  const selectedOption = drinks.options[drinks.selectedIndex];
-  const checkboxContainer = document.getElementById("checkboxContainer");
-  checkboxContainer.innerHTML = "";
+  //   document.getElementById("whyDiv").style.display = "none";
+  //   document.getElementById("excellent").style.display = "none";
+  //   document.getElementById("verygood").style.display = "none";
+  //   document.getElementById("good").style.display = "none";
+  //   document.getElementById("bad").style.display = "none";
+  //   document.getElementById("verybad").style.display = "none";
+  //   document.getElementById("reasonForWhyDiv").style.display = "none";
 
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.id = `checkbox-${selectedOption.value}`;
-  checkbox.value = `checkbox-${selectedOption.value}-value`;
+  document.getElementById("Large_div").style.display = "none";
+  document.getElementById("Frappe").style.display = "none";
+  document.getElementById("Latte").style.display = "none";
+  document.getElementById("Espresso").style.display = "none";
+  document.getElementById("Cold").style.display = "none";
+  document.getElementById("hotcoco").style.display = "none";
+  document.getElementById("Additional").style.display = "none";
 
-  const checkboxLabel = document.createElement("label");
-  checkboxLabel.htmlFor = `checkbox-${selectedOption.value}`;
-  checkboxLabel.innerHTML = ` Large ${selectedOption.text}`;
+  if (value != "select" && value != "") {
+    document.getElementById("Large_div").style.display = "";
+    document.getElementById(value).style.display = "";
+  }
+}
 
-  const checkboxItem = document.createElement("div");
-  checkboxItem.appendChild(checkbox);
-  checkboxItem.appendChild(checkboxLabel);
+function checkboxClicked(chkbox) {
+  console.log(chkbox.checked);
+  if (chkbox.checked) {
+    document.getElementById("Additional").style.display = "";
+    document.getElementById("inst").required = true;
+  } else {
+    document.getElementById("Additional").style.display = "none";
+    document.getElementById("inst").required = false;
+  }
+}
 
-  checkboxContainer.appendChild(checkboxItem);
+function submitted(e) {
+  e.preventDefault();
+  var form = document.getElementById("myForm");
 
-  checkbox.addEventListener("change", function () {
-    if (checkbox.checked) {
-      const textArea = document.createElement("textarea");
-      textArea.id = "myTextArea";
-      textArea.required = true;
-      textAreaContainer.appendChild(textArea);
+  if (
+    validFirstName &&
+    validLastName &&
+    validEmail &&
+    validPhone &&
+    validZipCode
+  ) {
+    var formData = new FormData(form);
+    var feedback =
+      document.getElementById("drinks").value === "select"
+        ? ""
+        : document.getElementById("drinks").value;
 
-      const textAreaLabel = document.createElement("label");
-      textAreaLabel.innerHTML = "Additional comments:*";
-      textAreaLabel.setAttribute("for", "myTextArea");
-      textAreaContainer.insertBefore(
-        textAreaLabel,
-        textAreaContainer.firstChild
-      );
-
-      textAreaContainer.style.display = "block";
-    } else {
-      textAreaContainer.style.display = "none";
-      textAreaContainer.innerHTML = "";
+    switch (feedback) {
+      case "Frappe":
+        feedback = "Frappe";
+        break;
+      case "Latte":
+        feedback = "Latte";
+        break;
+      case "Espresso":
+        feedback = "Esspresso";
+        break;
+      case "Cold":
+        feedback = "Cold Brew";
+        break;
+      case "hotcoco":
+        feedback = "Hot Coco";
+        break;
+      default:
+        feedback = "";
+        break;
     }
-  });
-};
 
-function displayValues() {
-  let Firstname = document.getElementById("firstName").value;
-  let Lastname = document.getElementById("lastName").value;
+    var sourcevar = "";
+    for (i = 0; i < cbSource.length; i++) {
+      if (cbSource[i].checked) {
+        sourcevar = sourcevar + cbSource[i].value + ", ";
+      }
+    }
 
-  let table = document.getElementById("resultTable");
-  let row1 = table.insertRow();
-  let cell1 = row1.insertCell(0);
-  let cell2 = row1.insertCell(1);
-  cell1.innerHTML = "First Name: ";
-  cell2.innerHTML = Firstname;
+    sourcevar = sourcevar.slice(0, -2);
+    formData.set("source", sourcevar);
+    formData.set("drinks", feedback);
+
+    localStorage.setItem(
+      "formData",
+      JSON.stringify(Object.fromEntries(formData))
+    );
+
+    var resetbtn = document.querySelector("#resetForm");
+    resetbtn.click();
+    dropDownChange("");
+    addNewRow();
+  } else {
+    alert("Some fields require your attention.");
+  }
+}
+
+function Hear(cb) {
+  var sources = document.getElementsByName("source");
+
+  if (cb.checked) {
+    for (i = 0; i < sources.length; i++) {
+      if (sources[i].required) sources[i].required = false;
+    }
+  } else {
+    var flag = false;
+    for (i = 0; i < sources.length; i++) {
+      if (sources[i].checked) {
+        flag = true;
+      }
+    }
+    if (!flag) {
+      for (i = 0; i < sources.length; i++) {
+        sources[i].required = true;
+      }
+    }
+  }
+}
+
+function addNewRow() {
+  var formData = JSON.parse(localStorage.getItem("formData"));
+  var tbodyRef = document.getElementsByTagName("tbody")[0];
+  debugger;
+
+  // Creating a new row
+  var tdRowNode = document.createElement("tr");
+
+  var trTitleCell = document.createElement("td");
+  trTitleCell.innerHTML = formData.title;
+
+  var trFirstNAme = document.createElement("td");
+  trFirstNAme.innerHTML = formData.firstName;
+
+  var trLastName = document.createElement("td");
+  trLastName.innerHTML = formData.lastName;
+
+  var trEmailId = document.createElement("td");
+  trEmailId.innerHTML = formData.emailId;
+
+  var trPhoneNo = document.createElement("td");
+  trPhoneNo.innerHTML = formData.phoneNumber;
+
+  var trStreetAdd1 = document.createElement("td");
+  trStreetAdd1.innerHTML = formData.streetAddress1;
+
+  var trStreetAdd2 = document.createElement("td");
+  trStreetAdd2.innerHTML = formData.streetAddress2;
+
+  var trCity = document.createElement("td");
+  trCity.innerHTML = formData.city;
+
+  var trState = document.createElement("td");
+  trState.innerHTML = formData.state;
+
+  var trZipCode = document.createElement("td");
+  trZipCode.innerHTML = formData.zipcode;
+
+  var trSource = document.createElement("td");
+  trSource.innerHTML = formData.source;
+
+  var trComment = document.createElement("td");
+  trComment.innerHTML = formData.text;
+
+  var trFeedback = document.createElement("td");
+  trFeedback.innerHTML = formData.drinks;
+
+  var trReason = document.createElement("td");
+  trReason.innerHTML = formData.large == undefined ? "" : formData.large;
+
+  var trReasonForWhy = document.createElement("td");
+  trReasonForWhy.innerHTML = formData.inst;
+
+  tdRowNode.appendChild(trTitleCell);
+  tdRowNode.appendChild(trFirstNAme);
+  tdRowNode.appendChild(trLastName);
+  tdRowNode.appendChild(trEmailId);
+  tdRowNode.appendChild(trPhoneNo);
+  tdRowNode.appendChild(trStreetAdd1);
+  tdRowNode.appendChild(trStreetAdd2);
+  tdRowNode.appendChild(trCity);
+  tdRowNode.appendChild(trState);
+  tdRowNode.appendChild(trZipCode);
+  tdRowNode.appendChild(trSource);
+  tdRowNode.appendChild(trComment);
+  tdRowNode.appendChild(trFeedback);
+  tdRowNode.appendChild(trReason);
+  tdRowNode.appendChild(trReasonForWhy);
+
+  tbodyRef.appendChild(tdRowNode);
 }
