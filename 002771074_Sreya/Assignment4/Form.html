@@ -160,29 +160,28 @@
           </div>
           <br />
 
-          <label for="zipcode">How did you hear*:</label>
-          <input
-            type="checkbox"
-            name="source"
-            value="facebook"
-            required="required"
-          />
+          <label for="hear">How did you hear*:</label>
+          <input type="checkbox" name="source" value="facebook" />
 
           Facebook
-          <input
-            type="checkbox"
-            name="source"
-            value="google"
-            required="required"
-          />
+          <input type="checkbox" name="source" value="google" />
           Google
-          <input
-            type="checkbox"
-            name="source"
-            value="yelp"
-            required="required"
-          />
+          <input type="checkbox" name="source" value="yelp" />
           Yelp <br /><br />
+
+          <label for="drinks">Drinks:</label>
+          <select id="drinks">
+            <option value="option1">Iced Latte</option>
+            <option value="option2">Frappuccino</option>
+            <option value="option3">Cold Brew</option>
+            <option value="option4">Iced Mocha</option>
+            <option value="option5">Americano</option>
+          </select>
+
+          <br /><br />
+          <div id="checkboxContainer"></div>
+          <br />
+          <br />
 
           <label for="comments">Comments*:</label>
           <textarea

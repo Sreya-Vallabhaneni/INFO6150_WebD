@@ -105,6 +105,29 @@ function validate(e) {
   }
 }
 
+const drinks = document.getElementById("drinks");
+
+drinks.onchange = function () {
+  const selectedOption = drinks.options[drinks.selectedIndex];
+  const checkboxContainer = document.getElementById("checkboxContainer");
+  checkboxContainer.innerHTML = "";
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.id = `checkbox-${selectedOption.value}`;
+  checkbox.value = `checkbox-${selectedOption.value}-value`;
+
+  const checkboxLabel = document.createElement("label");
+  checkboxLabel.htmlFor = `checkbox-${selectedOption.value}`;
+  checkboxLabel.innerHTML = `${selectedOption.text}`;
+
+  const checkboxItem = document.createElement("div");
+  checkboxItem.appendChild(checkbox);
+  checkboxItem.appendChild(checkboxLabel);
+
+  checkboxContainer.appendChild(checkboxItem);
+};
+
 // write a function submitted
 function submitted(e) {
   //e.preventDefault();
