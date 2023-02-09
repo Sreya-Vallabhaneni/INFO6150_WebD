@@ -104,14 +104,6 @@ function dropDownChange(value) {
   var cbarray = document.getElementsByName("reason");
   for (i = 0; i < cbarray.length; i++) cbarray[i].checked = false;
 
-  //   document.getElementById("whyDiv").style.display = "none";
-  //   document.getElementById("excellent").style.display = "none";
-  //   document.getElementById("verygood").style.display = "none";
-  //   document.getElementById("good").style.display = "none";
-  //   document.getElementById("bad").style.display = "none";
-  //   document.getElementById("verybad").style.display = "none";
-  //   document.getElementById("reasonForWhyDiv").style.display = "none";
-
   document.getElementById("Large_div").style.display = "none";
   document.getElementById("Frappe").style.display = "none";
   document.getElementById("Latte").style.display = "none";
@@ -227,7 +219,6 @@ function addNewRow() {
   var tbodyRef = document.getElementsByTagName("tbody")[0];
   debugger;
 
-  // Creating a new row
   var tdRowNode = document.createElement("tr");
 
   var trTitleCell = document.createElement("td");
