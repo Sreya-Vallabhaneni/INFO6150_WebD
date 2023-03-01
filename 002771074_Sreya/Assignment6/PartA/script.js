@@ -41,7 +41,7 @@ $(document).ready(function () {
     const num1 = parseInt($("#num1").val());
     const num2 = parseInt($("#num2").val());
 
-    if (isNaN(num1) || isNaN(num2)) {
+    if (!isValidNumber(num1) || !isValidNumber(num2)) {
       showError("Both inputs must be valid numbers.");
       return;
     }
