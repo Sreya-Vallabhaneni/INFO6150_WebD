@@ -85,7 +85,7 @@ $(document).ready(function () {
 
   function isValidNumber(number) {
     // Number should be a positive or negative integer or decimal
-    return /^-?\d+(\.\d+)?$/.test(number);
+    return /^\d+(\.\d+)?$/.test(number);
   }
 
   function getParameterByName(name, url) {
