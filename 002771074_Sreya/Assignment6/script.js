@@ -25,62 +25,48 @@ $(document).ready(function () {
       return;
     }
 
-    // If all validations pass, redirect to page 2
+    // If all validations pass, redirect to Calculator
     window.location.href =
-      "page2.html?username=" + encodeURIComponent(username);
+      "Calculator.html?username=" + encodeURIComponent(username);
   });
 
-  // Page 2
   var username = decodeURIComponent(getParameterByName("username"));
   $("#welcome").text(username);
+
+  const calculateResult = (event) => {
+    // Prevent default button behavior
+    event.preventDefault();
+
+    // Validate input
+    const num1 = parseInt($("#num1").val());
+    const num2 = parseInt($("#num2").val());
+
+    if (isNaN(num1) || isNaN(num2)) {
+      showError("Both inputs must be valid numbers.");
+      return;
+    }
+
+    // Calculate result
+    const operation = event.target.id;
+    const result = {
+      add: num1 + num2,
+      subtract: num1 - num2,
+      multiply: num1 * num2,
+      divide: num1 / num2,
+    }[operation];
+
+    // Display result
+    $("#result").val(result);
+  };
 
   $("#add").click(calculateResult);
   $("#subtract").click(calculateResult);
   $("#multiply").click(calculateResult);
   $("#divide").click(calculateResult);
 
-  function calculateResult(event) {
-    // Prevent default button behavior
-    event.preventDefault();
-
-    // Validate input
-    var num1 = $("#num1").val();
-    if (!isValidNumber(num1)) {
-      showError("Number 1 is invalid.");
-      return;
-    }
-
-    var num2 = $("#num2").val();
-    if (!isValidNumber(num2)) {
-      showError("Number 2 is invalid.");
-      return;
-    }
-
-    // Calculate result
-    var result;
-
-    switch (this.id) {
-      case "add":
-        result = parseInt(num1) + parseInt(num2);
-        break;
-      case "subtract":
-        result = parseInt(num1) - parseInt(num2);
-        break;
-      case "multiply":
-        result = parseInt(num1) * parseInt(num2);
-        break;
-      case "divide":
-        result = parseInt(num1) / parseInt(num2);
-        break;
-    }
-
-    // Display result
-    $("#result").val(result);
-  }
-
-  function showError(message) {
+  const showError = (message) => {
     $("#error").text(message);
-  }
+  };
 
   function isValidEmail(email) {
     // Accept only northeastern email addresses
