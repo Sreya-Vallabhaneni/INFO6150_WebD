@@ -1,100 +1,138 @@
 $(document).ready(function () {
-  // Page 1
-  $("#form1").submit(function (event) {
-    // Prevent form submission
-    event.preventDefault();
-
-    // Validate email
-    var email = $("#email").val();
-    if (!isValidEmail(email)) {
-      showError("Email is invalid.");
-      return;
-    }
-
-    // Validate username
-    var username = $("#username").val();
-    if (!isValidUsername(username)) {
-      showError("Username is invalid.");
-      return;
-    }
-
-    // Validate password
-    var password = $("#password").val();
-    if (!isValidPassword(password)) {
-      showError("Password is invalid.");
-      return;
-    }
-
-    // If all validations pass, redirect to Calculator
-    window.location.href =
-      "Calculator.html?username=" + encodeURIComponent(username);
+  $("#em_valid").hide();
+  let emailError = true;
+  $("#email").keyup(function () {
+    validateEmail();
+  });
+  $("#un_valid").hide();
+  let usernameError = true;
+  $("#username").keyup(function () {
+    validateUsername();
+  });
+  $("#pw_valid").hide();
+  let passwordError = true;
+  $("#password").keyup(function () {
+    validatePassword();
   });
 
-  var username = decodeURIComponent(getParameterByName("username"));
-  $("#welcome").text(username);
-
-  const calculateResult = (event) => {
-    // Prevent default button behavior
-    event.preventDefault();
-
-    // Validate input
-    const num1 = parseInt($("#num1").val());
-    const num2 = parseInt($("#num2").val());
-
-    if (!isValidNumber(num1) || !isValidNumber(num2)) {
-      showError("Both inputs must be valid numbers.");
-      return;
+  function validateEmail() {
+    let regex = /^[a-zA-Z0-9._%+-]+@northeastern\.edu$/;
+    let emailValue = $("#email").val();
+    if (emailValue.length == "") {
+      $("#em_valid").show();
+      $("#em_valid").html("**email is empty");
+      emailError = false;
+      return false;
+    } else if (!regex.test(emailValue)) {
+      $("#em_valid").show();
+      $("#em_valid").html(
+        "Email must end with @northeastern.edu and not contain special characters"
+      );
+      emailError = false;
+      return false;
+    } else {
+      emailError = true;
+      $("#em_valid").hide();
     }
-
-    // Calculate result
-    const operation = event.target.id;
-    const result = {
-      add: num1 + num2,
-      subtract: num1 - num2,
-      multiply: num1 * num2,
-      divide: num1 / num2,
-    }[operation];
-
-    // Display result
-    $("#result").val(result);
-  };
-
-  $("#add").click(calculateResult);
-  $("#subtract").click(calculateResult);
-  $("#multiply").click(calculateResult);
-  $("#divide").click(calculateResult);
-
-  const showError = (message) => {
-    $("#error").text(message);
-  };
-
-  function isValidEmail(email) {
-    // Accept only northeastern email addresses
-    return email.endsWith("@northeastern.edu");
   }
 
-  function isValidUsername(username) {
-    // Username should be at least 3 characters long and not contain any special characters
-    return /^[a-zA-Z0-9]{3,}$/.test(username);
+  function specialCharacters(str) {
+    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    return specialChars.test(str);
   }
 
-  function isValidPassword(password) {
-    // Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit
-    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(password);
+  function validateUsername() {
+    let usernameValue = $("#username").val();
+    if (usernameValue.length == "") {
+      $("#un_valid").show();
+      usernameError = false;
+      return false;
+    } else if (usernameValue.length < 3 || usernameValue.length > 20) {
+      $("#un_valid").show();
+      $("#un_valid").html("**length of username must be between 3 and 20");
+      usernameError = false;
+      return false;
+    } else if (specialCharacters(usernameValue)) {
+      $("#un_valid").show();
+      $("#un_valid").html(
+        "**username has special characters,must contain only letters and numbers"
+      );
+      usernameError = false;
+      return false;
+    } else {
+      usernameError = true;
+      $("#un_valid").hide();
+    }
   }
 
-  function isValidNumber(number) {
-    // Number should be a positive or negative integer or decimal
-    return /^\d+(\.\d+)?$/.test(number);
+  function validatePassword() {
+    let passwordValue = $("#password").val();
+    let regex =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?!.*\s).{8,32}$/;
+    let regex1 = /.*[a-z].*/;
+    let regex2 = /.*[A-Z].*/;
+    let regex3 = /.*[!@#$%^&*(),.?":{}|<>].*/;
+    let regex4 = /.*[0-9].*/;
+
+    if (passwordValue.length == "") {
+      $("#").show();
+      $("#pw_valid").html("**password is empty");
+      passwordError = false;
+      return false;
+    } else if (
+      (passwordValue.length > 0 && passwordValue.length < 8) ||
+      passwordValue.length > 32
+    ) {
+      $("#pw_valid").show();
+      $("#pw_valid").html("**length of your password must be between 8 and 32");
+      $("#pw_valid").css("color", "red");
+      passwordError = false;
+      return false;
+    } else if (!regex1.test(passwordValue)) {
+      $("#pw_valid").show();
+      $("#pw_valid").html(
+        "Password must have atleast one small letter between a-z"
+      );
+      passwordError = false;
+      return false;
+    } else if (!regex2.test(passwordValue)) {
+      $("#pw_valid").show();
+      $("#pw_valid").html(
+        "Password must have atleast one capital letter between A-Z"
+      );
+      passwordError = false;
+      return false;
+    } else if (!regex3.test(passwordValue)) {
+      $("#pw_valid").show();
+      $("#pw_valid").html("Password must have atleast one special character");
+      passwordError = false;
+      return false;
+    } else if (!regex4.test(passwordValue)) {
+      $("#pw_valid").show();
+      $("#pw_valid").html("Password must have atleast one number ");
+      passwordError = false;
+      return false;
+    } else if (!regex.test(passwordValue)) {
+      $("#pw_valid").show();
+      $("#pw_valid").html("Password must have not have spaces");
+      $("#pw_valid").css("color", "red");
+      passwordError = false;
+      return false;
+    } else {
+      passwordError = true;
+      $("#pw_valid").hide();
+    }
   }
 
-  function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-      results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return "";
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-  }
+  $("#submit").click(function () {
+    validateEmail();
+    validatePassword();
+    validateUsername();
+    if (usernameError == true && passwordError == true && emailError == true) {
+      window.location.href = "Calculator.html";
+      return false;
+    } else {
+      return false;
+    }
+  });
 });

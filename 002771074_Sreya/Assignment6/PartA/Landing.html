@@ -8,15 +8,27 @@
   </head>
   <body>
     <h1>Login</h1>
-    <form id="form1" action="page2.html" method="get">
-      <label>Email: </label
-      ><input type="email" name="email" id="email" /><br /><br />
+    <form id="form1" action method="get">
+      <label>Email: </label><input type="email" name="email" id="email" />
+      <p id="em_valid">Enter Northeastern id</p>
+      <br /><br />
       <label>Username: </label
-      ><input type="text" name="username" id="username" /><br /><br />
+      ><input type="text" name="username" id="username" />
+      <p id="un_valid">
+        Username should be at least 3 characters long and not contain any
+        special characters
+      </p>
+      <br /><br />
       <label>Password: </label
-      ><input type="password" name="password" id="password" /><br /><br />
-      <input type="submit" value="Submit" />
+      ><input type="password" name="password" id="password" />
+      <p id="pw_valid">
+        Password should be at least 8 characters long and contain at least one
+        uppercase letter, one lowercase letter, and one digit
+      </p>
+      <br /><br />
+      <br />
+      <br />
+      <input type="submit" value="Submit" id="submit" />
     </form>
-    <div id="error"></div>
   </body>
 </html>
