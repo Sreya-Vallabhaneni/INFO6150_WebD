@@ -1,12 +1,12 @@
 $(document).ready(function () {
-  var timer = null;
-  var hours = 0,
+  let timer = null;
+  let hours = 0,
     minutes = 0,
     seconds = 0;
 
   function updateTimerLabel() {
     // Format the time values with leading zeros
-    var formattedTime =
+    const formattedTime =
       ("0" + hours).slice(-2) +
       ":" +
       ("0" + minutes).slice(-2) +
@@ -15,9 +15,12 @@ $(document).ready(function () {
     $(".timer-label").text(formattedTime);
   }
 
-  $("#start-btn").click(function () {
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const startTimer = async () => {
     if (timer !== null) return; // Timer already running
-    timer = setInterval(function () {
+    while (true) {
+      await sleep(1000);
       seconds++;
       if (seconds >= 60) {
         seconds = 0;
@@ -28,18 +31,30 @@ $(document).ready(function () {
         }
       }
       updateTimerLabel();
-    }, 1000);
-  });
+    }
+  };
 
-  $("#stop-btn").click(function () {
+  const stopTimer = () => {
     clearInterval(timer);
     timer = null;
-  });
+  };
 
-  $("#reset-btn").click(function () {
+  const resetTimer = () => {
     clearInterval(timer);
     timer = null;
     hours = minutes = seconds = 0;
     updateTimerLabel();
+  };
+
+  $("#start-btn").click(() => {
+    startTimer();
+  });
+
+  $("#stop-btn").click(() => {
+    stopTimer();
+  });
+
+  $("#reset-btn").click(() => {
+    resetTimer();
   });
 });
