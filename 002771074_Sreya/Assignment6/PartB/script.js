@@ -19,8 +19,7 @@ $(document).ready(function () {
 
   const startTimer = async () => {
     if (timer !== null) return; // Timer already running
-    while (true) {
-      await sleep(1000);
+    timer = setInterval(async () => {
       seconds++;
       if (seconds >= 60) {
         seconds = 0;
@@ -31,7 +30,7 @@ $(document).ready(function () {
         }
       }
       updateTimerLabel();
-    }
+    }, 1000);
   };
 
   const stopTimer = () => {
