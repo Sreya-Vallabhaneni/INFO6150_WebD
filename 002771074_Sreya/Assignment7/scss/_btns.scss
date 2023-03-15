@@ -1,0 +1,31 @@
+%btn {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin: 3px;
+    align-items: center;
+    text-align: center;
+    width:100%;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.btn-primary {
+    @extend %btn;
+    @include linearGradient(lighten($fb-color, 1), $primary-color);
+}
+
+.btn-secondary {
+    @extend %btn;
+    background-color: $inst-color;
+    @include linearGradient($inst-color, $incolor);
+}
+
+.btn-success {
+    @extend %btn;
+    background-color: $wa-color;
+    @include linearGradient($wa-color, $whcolor);
+}
+
