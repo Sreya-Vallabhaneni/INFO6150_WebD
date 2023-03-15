@@ -1,0 +1,46 @@
+$light-color: rgb(232, 232, 155);
+$font-stack: Arial, Helvetica, sans-serif;
+$wa-color: rgb(64, 182, 72);
+$fb-color: rgb(18, 36, 129);
+$inst-color: rgb(177, 51, 169);
+$primary-color: beige;
+$secondary-color: yellowgreen;
+$hdcolor: rgb(235, 113, 113); 
+$whcolor: rgb(0, 255, 119);
+$incolor: rgb(215, 94, 94);
+$grdbgcolor: rgb(232, 127, 127);
+$darkcolor: rgb(0, 0, 0);
+
+@function set-text-color($color1) {
+    @if(lightness($color1) > 70) {
+        @return #333;
+    }
+    @else {
+        @return #fff;
+    }
+}
+
+@mixin linearGradient($color1, $color2) {
+    background: linear-gradient($color1, $color2);
+    color: set-text-color($color1);
+}
+
+// @mixin bg-image($image) {
+//     /* using interpolation */
+//       background-image: url("/images/#{$image}.jpg");
+//       background-size: 2000px 2000px;
+
+//   }
+
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color);
+}
+  
+  @mixin grid-image($image) {
+    /* using interpolation */
+      background-image: url("/images/#{$image}.jpg");
+      background-size: 2000px 1000px;
+
+  }
+  
