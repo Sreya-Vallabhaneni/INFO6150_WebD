@@ -136,3 +136,52 @@ $(document).ready(function () {
     }
   });
 });
+
+$(document).ready(function () {
+  const calculate = (num1, num2, operator) => {
+    switch (operator) {
+      case "+":
+        return num1 + num2;
+      case "-":
+        return num1 - num2;
+      case "*":
+        return num1 * num2;
+      case "/":
+        return num1 / num2;
+      default:
+        return "Invalid operator";
+    }
+  };
+
+  $("#add").click(function () {
+    const num1 = parseFloat($("#num1").val());
+    const num2 = parseFloat($("#num2").val());
+    const operator = "+";
+    const result = calculate(num1, num2, operator);
+    $("#result").val(result);
+  });
+
+  $("#subtract").click(function () {
+    const num1 = parseFloat($("#num1").val());
+    const num2 = parseFloat($("#num2").val());
+    const operator = "-";
+    const result = calculate(num1, num2, operator);
+    $("#result").val(result);
+  });
+
+  $("#multiply").click(function () {
+    const num1 = parseFloat($("#num1").val());
+    const num2 = parseFloat($("#num2").val());
+    const operator = "*";
+    const result = calculate(num1, num2, operator);
+    $("#result").val(result);
+  });
+
+  $("#divide").click(function () {
+    const num1 = parseFloat($("#num1").val());
+    const num2 = parseFloat($("#num2").val());
+    const operator = "/";
+    const result = calculate(num1, num2, operator);
+    $("#result").val(result);
+  });
+});
