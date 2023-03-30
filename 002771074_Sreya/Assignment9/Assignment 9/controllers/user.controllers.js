@@ -9,7 +9,7 @@ var UserService = require("../services/user.services");
 
 const loginuser = async (req, res) => {
   var email = req.body.email;
-  console.log("hello");
+  // console.log("hello");
   var password = req.body.password;
   if (email == "" && password == "") {
     res.status(400).send("Please enter email and password");
@@ -19,12 +19,8 @@ const loginuser = async (req, res) => {
     res.status(400).send("Please enter email");
     return;
   } else {
-    if (
-      !email.match(
-        /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/
-      )
-    ) {
-      res.status(400).send("Please enter valid mail");
+    if (!email.match(/^[a-zA-Z0-9._%+-]+@gmail\.com$/)) {
+      res.status(400).send("Please enter valid gmail");
 
       return;
     }
@@ -34,7 +30,9 @@ const loginuser = async (req, res) => {
     return;
   } else {
     if (
-      !password.match(/^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!&$%&? "]).*$/)
+      !password.match(
+        /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).+$/
+      )
     ) {
       res
         .status(400)
