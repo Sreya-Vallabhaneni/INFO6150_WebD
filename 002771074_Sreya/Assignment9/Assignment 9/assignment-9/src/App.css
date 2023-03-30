@@ -1,0 +1,160 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+#image1{
+  height:500px;
+  width:1260px;
+  
+}
+.navbar1{
+  background-color:black;
+  display:inline-block;
+  width:1280px;
+  color: White;
+  text-decoration: None;
+  font-size:17px;
+  margin-top:5px;
+  }
+
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display:inline-block;
+    padding:15px;
+    margin-right:220px;
+    text-decoration:None;
+    
+}
+
+.nav1{
+  color:white;
+  font-size:medium;
+  font-size:17px;
+  text-decoration: None;
+  margin-left:50px;
+  margin-right:120px;
+  float:left;
+}
+
+#section{
+    margin-top:5px;
+    margin-left:15px;
+
+}
+
+.homeimage{
+height:500px;
+}
+
+#Jobsimage1{
+  width:450px;
+  height: 488px;
+
+}
+#contacttext{
+  font-size: 20px;
+  margin-left:300px;
+  margin-top:200px;
+  color:black
+}
+
+#button{
+  width:300px;
+}
+.fields{
+  width:300px;
+}
+#form{
+  margin-left:450px;
+  margin-top:200px;
+  
+ 
+}
+#Jobsimage3{
+  height:690px;
+  
+}
+
+#card{
+ background-color:gold;
+}
+#travel{
+  margin-left:25px;
+  margin-right:25px;
+  display:flex;
+  padding:10px;
+ 
+  
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.navbar1{
+  width:100%;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.App {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  margin-right:400px;
+ 
+}
+input {
+  display: block;
+  width: 20rem;
+  height: 2rem;
+  padding: 1rem;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+button {
+  border: black;
+  padding: 1rem;
+  width: 20rem;
+  font-size: 1.2em;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #c5c5c5;
+}
+/* #form{
+  background-color:lightslategray;
+} */

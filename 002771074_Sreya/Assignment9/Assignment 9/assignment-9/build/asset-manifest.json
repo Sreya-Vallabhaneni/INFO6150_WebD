@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4e3a9f08.css",
+    "main.js": "/static/js/main.3bae1197.js",
+    "static/js/787.d37411c7.chunk.js": "/static/js/787.d37411c7.chunk.js",
+    "static/media/image.jfif": "/static/media/image.f56f378091ba9fd77f13.jfif",
+    "static/media/image4.jfif": "/static/media/image4.ceb79741c8ee07e35031.jfif",
+    "static/media/image2.jfif": "/static/media/image2.d285a2b781f774c31e04.jfif",
+    "static/media/Travel2.jfif": "/static/media/Travel2.c5fb6b0a84ce07927ec4.jfif",
+    "static/media/image3.jfif": "/static/media/image3.71fa7b57a659e108c662.jfif",
+    "static/media/Image1.jpg": "/static/media/Image1.2d665d5a241f58550b8a.jpg",
+    "static/media/Travel1.jpg": "/static/media/Travel1.897f01c272f96539f1ba.jpg",
+    "static/media/Image3.jpg": "/static/media/Image3.c5bea5849bd53f43e2a2.jpg",
+    "static/media/Image2.jfif": "/static/media/Image2.473aa89201f335e38443.jfif",
+    "static/media/Image.jfif": "/static/media/Image.bb0a19f983f61d040124.jfif",
+    "index.html": "/index.html",
+    "main.4e3a9f08.css.map": "/static/css/main.4e3a9f08.css.map",
+    "main.3bae1197.js.map": "/static/js/main.3bae1197.js.map",
+    "787.d37411c7.chunk.js.map": "/static/js/787.d37411c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e3a9f08.css",
+    "static/js/main.3bae1197.js"
+  ]
+}
