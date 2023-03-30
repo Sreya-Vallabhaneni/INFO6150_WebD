@@ -68,6 +68,8 @@ It calls the editusers function in the user.controller.js module.
 DELETE /user/delete: This route is used to delete an existing user. I
 t calls the deleteuser function in the user.controller.js module.
 
+
+
 Services-> user.services.js
 createuser: This function creates a new user in the database. It first checks whether a user with the given 
 email already exists, and if so, it returns an error. Otherwise,
@@ -91,7 +93,9 @@ which is a common design pattern used in web applications. Your user.controllers
  functions that interact with the User model, while your user.route file defines the routes 
  that map to these controller functions.
 
+
  REACT COMPONENTS 
+
 
 login.js
  This is a React functional component called Login that defines a login form. 
@@ -117,6 +121,8 @@ The login function creates an object with the name, email, and password values a
 The Login component returns a login form with input fields for name, email, and password. 
 It also displays error messages for the nameError, emailError, passwordError, and MessageError state variables. 
 The form is submitted using the handleSubmit function when the submit button is clicked.
+
+
 
 Home.js
 This is a React component called "Home" that renders a navigation bar using Bootstrap and React Router. 
@@ -144,6 +150,8 @@ The function returns several components wrapped in the <> tags, including a Navb
  which contains the dynamically generated Card components. Finally, there is a div element that displays 
 some contact information.
 
+
+
 Jobs.js
 It is importing several dependencies, including React, Bootstrap components, and images.
  The component is rendering a navigation bar using the React Router package to link to other pages, 
@@ -155,6 +163,8 @@ Each card includes an image, job title, and description of responsibilities.
 
 Finally, the component includes a section for contact information, which includes a phone number, address,
 and email for customers to book and inquire about job positions.
+
+
 
 Contact.js
 This code defines a React component called Contact which renders a page for contacting Marriott hotels. 
