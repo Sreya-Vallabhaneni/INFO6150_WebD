@@ -27,6 +27,7 @@ function Login() {
     let emailregex =
       /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
     let passwordregex = /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!&$%&? "]).*$/;
+
     if (email === "" && password === "") {
       console.log("email & password");
       setnameerror("name cannot be blank");
@@ -68,11 +69,7 @@ function Login() {
     } else {
       setpasswordError(" ");
       console.log("password clear");
-      if (!passwordregex.test(password)) {
-        console.log("password regex");
-        setpasswordError("enter valid password");
-        return true;
-      } else {
+      {
         console.log("password total");
         setemailError(" ");
         setpasswordError(" ");
